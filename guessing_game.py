@@ -25,3 +25,37 @@ Project 1 - The Number Guessing Game
 
 
 # Kick off the program by calling the start_game function.
+
+import random
+
+
+def start_game():
+    """Prompts the user to input an int guess between 1 to 10,
+    then guiding them with a feedback showing it the guess is higher then the winning number or lower until the user gets it right.
+    Shows the number of attempts before correct guess.
+    ( More enhancements later... )
+    """
+    # write your code inside this function.
+    welcome_message = "*****WELCOME TO NUMBER GUESSING GAME*****\n\n"
+    print(welcome_message)
+
+    jackpot = random.randint(1,10)
+    guess = 0
+    attempts = 0
+	
+    while guess != jackpot:
+        guess = int(input("what's your guess (1 - 10)? "))
+        if guess > jackpot:
+            print("it's lower")
+        elif guess < jackpot:
+            print("it's higher")
+        attempts +=1
+    
+    print("\nCongrats, YOU GOT IT!")
+    print(f"It took you {attempts} attempts to guess it correctly")
+
+    exit_message = "\n\n***** GAME OVER - Goodbye! *****"
+    print(exit_message)
+
+# Kick off the program by calling the start_game function.
+start_game()
